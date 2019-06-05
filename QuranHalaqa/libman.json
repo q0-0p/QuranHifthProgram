@@ -1,0 +1,31 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+
+    {
+      "ProviderId": "cdnjs",
+      "DestinationPath": "wwwroot/lib/vue/",
+      "IsUsingDefaultProvider": true,
+      "IsUsingDefaultDestination": false,
+      "Name": "vue",
+      "Version": "2.5.18"
+    },
+    {
+      "ProviderId": "cdnjs",
+      "DestinationPath": "wwwroot/lib/vuetify/",
+      "IsUsingDefaultProvider": true,
+      "IsUsingDefaultDestination": false,
+      "Name": "vuetify",
+      "Version": "1.3.12"
+    },
+    {
+      "ProviderId": "cdnjs",
+      "DestinationPath": "wwwroot/lib/vue/",
+      "IsUsingDefaultProvider": true,
+      "IsUsingDefaultDestination": false,
+      "Name": "vue",
+      "Version": "2.5.18"
+    }
+  ]
+}

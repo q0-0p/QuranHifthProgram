@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "Halaqa";
+}
+
+<!-- <a asp-area="Admin" asp-controller="Location" asp-action="Edit" asp-route-id="1">TEST</a> -->
+
+<div class="row row-eq-height">
+    <!--   <div class="col-md-12 row-eq-height"> -->
+    <!--   Parking Table goes here.<br />
+       Notez: 1.Add Starting(?) Date
+       2.Add Parking History table.-->
+    <div class="box">
+        <div class="box-header">
+            <h3 class="box-title">Location</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+            <table class="table table-responsive table-striped table-hover">
+                <thead>
+
+                    <tr>
+                        <th> LocationName </th>
+                        <th class="hidden-xs hidden-sm">LocationType         </th>
+                        <th class="hidden-xs hidden-sm">LocationAddress   </th>
+                        <th class="hidden-xs hidden-sm">NumberOfUnits</th>
+                        <th class="hidden-xs hidden-sm">NumberOfFloors </th>
+                        <th >#</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                <tr>
+                                        <td> LO.LocationName </td>
+                    <td class="hidden-xs hidden-sm">LO.LocationType         </td>
+                    <td class="hidden-xs hidden-sm">LO.LocationAddress   </td>
+                    <td class="hidden-xs hidden-sm">LO.NumberOfUnits</td>
+                    <td class="hidden-xs hidden-sm">LO.NumberOfFloors </td>
+
+                    <td>
+                        
+
+                        <a asp-area="Admin" asp-controller="Halaqa" asp-action="Edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> </a>
+                        <a asp-area="Admin" asp-controller="Halaqa" asp-action="Edit"><i class="fa fa-trash-o" aria-hidden="true"></i> </a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- /.box-body -->
+    </div>
+
+</div>
+

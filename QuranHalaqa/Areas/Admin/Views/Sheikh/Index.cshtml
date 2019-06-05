@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewData["Title"] = "Sheikh";
+}
+
+<div id="app-sheikh">
+    <div></div>
+    <b-table striped hover :items="sheikhs" :fields="fields">
+        <template slot="actions" slot-scope="row">
+            <!-- The \ before the 'at' is to escape C# Razor -->
+            <b-button size="sm" @@click.stop="edit(row.item, row.index, $event.target)" class="mr-1">
+                Edit
+            </b-button>
+            <b-button size="sm" @@click.stop="delete(row.item, row.index, $event.target)" class="mr-1">
+                Delete
+            </b-button>
+        </template>
+    </b-table>
+
+    <div class="text-right">
+        <b-button size="sm" @@click.stop="add" class="mr-1">
+            Add
+        </b-button>
+    </div>
+    <b-modal id="modelDetails" @@hide="resetModal" ref="formModal" :title="modalDetails.title" v-model="modalDetails.show" hide-footer>
+        <b-container fluid>
+            <b-form @@submit="onSubmit">
+                <b-form-group id="exampleInputGroup1" label="First Name:" label-for="exampleInput1">
+                    <b-form-input id="exampleInput1" type="text" v-model="selectedSheikh.SheikhFirstName" required placeholder="Enter First Name"></b-form-input>
+                </b-form-group>
+                <b-form-group id="exampleInputGroup2" label="Last Name:" label-for="exampleInput2">
+                    <b-form-input id="exampleInput2" type="text" v-model="selectedSheikh.SheikhLastName" required placeholder="Enter Last Name"></b-form-input>
+                </b-form-group>
+                <b-form-group id="exampleInputGroup3" label="Email:" label-for="exampleInput3">
+                    <b-form-input id="exampleInput3" type="email" v-model="selectedSheikh.SheikhEmail" required placeholder="Enter Email"></b-form-input>
+                </b-form-group>
+                <b-form-group id="exampleInputGroup4" label="Cell Number:" label-for="exampleInput4">
+                    <b-form-input id="exampleInput4" type="text" v-model="selectedSheikh.SheikhCellNumber" required placeholder="Enter Cell Number"></b-form-input>
+                </b-form-group>
+
+                <b-button @@click="save" variant="primary">Save</b-button>
+                <b-btn class="float-right" variant="primary" @@click="modalDetails.show=false">
+                    Close
+                </b-btn>
+
+            </b-form>
+        </b-container>
+    </b-modal>
+</div>
+
+@section scripts {
+    <script src="~/vue/admin-sheikh.js" type="text/javascript"></script>
+}

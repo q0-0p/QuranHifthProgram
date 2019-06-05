@@ -1,0 +1,126 @@
+﻿@model IEnumerable<Halaqa>
+
+@{
+    ViewData["Title"] = "Halaqa";
+}
+
+<!-- <a asp-area="Admin" asp-controller="Location" asp-action="Edit" asp-route-id="1">TEST</a> -->
+
+<div class="row row-eq-height">
+    <!--   <div class="col-md-12 row-eq-height"> -->
+    <!--   Parking Table goes here.<br />
+       Notez: 1.Add Starting(?) Date
+       2.Add Parking History table.-->
+    <div class="box">
+        <div class="box-header">
+            <h3 class="box-title">Halaqa List</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+            <button id="halaqa-add" class="addHalaqa btn btn-primary">Add Halaqa</button>
+            <table class="table table-responsive table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th> Name </th>
+                        <th>Sheik</th>
+                        <th>Days</th>
+                        <th>Time Start</th>
+                        <th>Active</th>
+                        <th>No. of Students</th>
+                    </tr>
+                </thead>
+                <tbody id="halaqa-table-body"></tbody>
+            </table>
+        </div>
+        <!-- /.box-body -->
+    </div>
+
+</div>
+
+<div class="modal fade" id="HalaqaModal" tabindex="-1" role="dialog" aria-labelledby="HalaqaModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="HalaqaModalTitle">HalaqaModalTitle</h4>
+            </div>
+            <div class="modal-body">
+                <!-- Nav tabs -->
+                <div>
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#general" aria-controls="general" role="tab" data-toggle="tab">General</a></li>
+                        <li role="presentation"><a href="#students" aria-controls="students" role="tab" data-toggle="tab">Students</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="general">
+                            <form>
+                                <div class="form-group">
+                                    <label for="halaqa-name" class="control-label">Name:</label>
+                                    <input type="text" class="form-control" id="halaqa-name" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="sheikh-id" class="control-label">Sheikh:</label>
+                                    <select class="form-control" id="sheikh-id"></select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">Days:</label> <br />
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" id="mo-checkbox" name="mo-checkbox"> Mo
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" id="tu-checkbox" name="tu-checkbox"> Tu
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" id="we-checkbox" name="we-checkbox"> We
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" id="th-checkbox" name="th-checkbox"> Th
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" id="fr-checkbox" name="fr-checkbox"> Fr
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" id="sa-checkbox" name="sa-checkbox"> Sa
+                                    </label>
+                                    <label class="checkbox-inline">
+                                        <input type="checkbox" id="su-checkbox" name="su-checkbox"> Su
+                                    </label>
+                                </div>
+                                <div class="form-group">
+                                    <label for="halaqa-name" class="control-label">Start Time:</label>
+                                    <input type="time" class="form-control" id="halaqa-starttime">
+                                </div>
+                                <div class="form-group">
+                                    <label for="halaqa-name" class="control-label">End Time:</label>
+                                    <input type="time" class="form-control" id="halaqa-endtime">
+                                </div>
+                                <div class="form-group">
+                                    <label for="start-date" class="control-label">Start Date:</label>
+                                    <input type="date" class="form-control" id="halaqa-startdate">
+                                </div>
+                            </form>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="students">
+                            <div style="max-height:400px; overflow-y:scroll">
+                                <br />
+                                <ul style="margin-left:10px;margin-right:10px;" id="student-list" class="list-group"></ul>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="halaqa-save" class="btn btn-primary">Save</button>
+                    <button type="button" id="halaqa-delete" class="btn btn-danger">Delete</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script src="~/js/app-admin-halaqas.js" type="text/javascript"></script>
+}

@@ -1,0 +1,62 @@
+﻿@{
+    ViewData["Title"] = "Halaqa";
+}
+
+<div class="box-body panel">
+    <!-- <div class="panel-heading"><h3>Location</h3></div> -->
+    <div class="workderorderhistory-content">
+        <div class="row">
+            <div class="col-md-3 col-xs-6">
+                <strong>Location ID:</strong>
+            </div>
+            <div class="col-md-3 col-xs-6">
+                <input type="text" class="form-control" placeholder=" " value="Model.LocationId">
+            </div>
+            <div class="col-md-3 col-xs-6">
+                <strong>Locatoin Name: </strong>
+            </div>
+            <div class="col-md-3 col-xs-6">
+                <input type="text" class="form-control" placeholder=" " value="Model.LocationName">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-xs-6">
+                <strong>Type:</strong>
+            </div>
+            <div class="col-md-3 col-xs-6">
+                <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" tabindex="-1" aria-hidden="true">
+                    <option selected="selected">Model.LocationType</option>
+                    <option>Town House</option>
+                    <option>Apartment</option>
+                    <option>Single House</option>
+                    <option>Condo</option>
+                </select>
+            </div>
+            <div class="col-md-3 col-xs-6">
+                <strong>Address:</strong>
+            </div>
+            <div class="col-md-3 col-xs-6">
+                <input type="text" class="form-control" placeholder=" " value="Model.LocationAddress">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-xs-6">
+                <strong>Numer Of Units:</strong>
+            </div>
+            <div class="col-md-3 col-xs-6">
+                <input type="text" class="form-control" placeholder=" " value="Model.NumberOfUnits">
+            </div>
+            <div class="col-md-3 col-xs-6">
+                <strong>Namber Of Floors:</strong>
+            </div>
+            <div class="col-md-3 col-xs-6">
+                <input type="text" class="form-control" placeholder=" " value="Model.NumberOfFloors">
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<button type="submit" class="btn btn-primary">Submit</button>
+<button type="button" class="btn btn-primary">Close</button>
+

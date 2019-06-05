@@ -1,0 +1,85 @@
+﻿@model IEnumerable<Halaqa>
+
+@{
+    ViewData["Title"] = "Halaqa History";
+}
+
+<!-- <a asp-area="Admin" asp-controller="Location" asp-action="Edit" asp-route-id="1">TEST</a> -->
+
+<div class="row row-eq-height">
+    <!--   <div class="col-md-12 row-eq-height"> -->
+    <!--   Parking Table goes here.<br />
+       Notez: 1.Add Starting(?) Date
+       2.Add Parking History table.-->
+    <div class="box">
+        <div class="box-header">
+            <h3 class="box-title">Please select halaqa</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+            <div class="form-group">
+                <label for="sheikh-id" class="control-label">Sheikh:</label>
+                <select class="form-control" id="sheikh-id">
+                    <option>Loading....</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="halaqa-id" class="control-label">Halaqa:</label>
+                <select class="form-control" id="halaqa-id">
+                    <option>Loading....</option>
+                </select>
+            </div>
+
+            <table class="table table-responsive table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Session Date</th>
+                        <th>Canceled?</th>
+                    </tr>
+                </thead>
+                <tbody id="halaqa-table-body">
+                    <tr>
+                        <td colspan="3">Please select a halaqa</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- /.box-body -->
+    </div>
+
+</div>
+
+<div class="modal fade" id="HalaqaModal" tabindex="-1" role="dialog" aria-labelledby="HalaqaModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="HalaqaModalTitle">Halaqa Session</h4>
+            </div>
+            <div class="modal-body">
+                <!-- Nav tabs -->
+                <p><b>Halaqa Name</b>: <span id="halaqa-name-span"></span></p>
+                <p><b>Session Date</b>: <span id="session-date-span"></span></p>
+                <p id="halaqa-reason-p"><b>Reason Cancelled</b>: <span id="halaqa-reason-span"></span></p>
+                <div id="session-history-div">
+                    <h3>Students</h3>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Student Name</th>
+                                <th>Assigned Work</th>
+                                <th>Revision</th>
+                                <th>Absence</th>
+                            </tr>
+                        </thead>
+                        <tbody id="session-history-table"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+    <script src="~/js/app-admin-halaqa-history.js" type="text/javascript"></script>
+}
